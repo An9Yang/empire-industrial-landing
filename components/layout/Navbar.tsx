@@ -29,17 +29,28 @@ export function Navbar() {
     <nav
       className={cn(
         'fixed top-0 left-0 right-0 z-fixed transition-all duration-300',
-        isScrolled ? 'bg-[var(--color-bg-dark)]/95 backdrop-blur-sm shadow-sm' : ''
+        isScrolled
+          ? 'bg-white shadow-sm'
+          : 'bg-transparent'
       )}
     >
       <div className="container-main">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link href="#home" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
-              <span className="text-primary font-semibold text-lg">E</span>
+            <div className={cn(
+              'w-8 h-8 rounded-md flex items-center justify-center transition-colors',
+              isScrolled ? 'bg-primary' : 'bg-white'
+            )}>
+              <span className={cn(
+                'font-semibold text-lg',
+                isScrolled ? 'text-white' : 'text-primary'
+              )}>E</span>
             </div>
-            <span className="text-white font-semibold text-lg hidden sm:block">
+            <span className={cn(
+              'font-semibold text-lg hidden sm:block transition-colors',
+              isScrolled ? 'text-gray-900' : 'text-white'
+            )}>
               Empire Industrial
             </span>
           </Link>
@@ -50,13 +61,25 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm text-white/80 hover:text-white transition-colors rounded-md hover:bg-white/5"
+                className={cn(
+                  'px-3 py-2 text-sm rounded-md transition-colors',
+                  isScrolled
+                    ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                )}
               >
                 {link.label}
               </Link>
             ))}
             <Link href="#contact" className="ml-3">
-              <Button className="bg-white text-primary hover:bg-white/90" size="sm">
+              <Button
+                className={cn(
+                  isScrolled
+                    ? 'bg-primary text-white hover:bg-primary-hover'
+                    : 'bg-white text-primary hover:bg-white/90'
+                )}
+                size="sm"
+              >
                 Contact
               </Button>
             </Link>
@@ -64,7 +87,12 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-white hover:bg-white/10 rounded-md transition-colors"
+            className={cn(
+              'md:hidden p-2 rounded-md transition-colors',
+              isScrolled
+                ? 'text-gray-700 hover:bg-gray-100'
+                : 'text-white hover:bg-white/10'
+            )}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -76,7 +104,10 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'md:hidden bg-[var(--color-bg-dark)] border-t border-white/10 overflow-hidden transition-all duration-300',
+          'md:hidden overflow-hidden transition-all duration-300',
+          isScrolled
+            ? 'bg-white border-t border-gray-100'
+            : 'bg-dark border-t border-white/10',
           isMobileMenuOpen ? 'max-h-80' : 'max-h-0'
         )}
       >
@@ -85,7 +116,12 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="block px-3 py-2.5 text-white/80 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+              className={cn(
+                'block px-3 py-2.5 rounded-md transition-colors',
+                isScrolled
+                  ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  : 'text-white/80 hover:text-white hover:bg-white/5'
+              )}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.label}
@@ -94,7 +130,12 @@ export function Navbar() {
           <div className="pt-3">
             <Link
               href="#contact"
-              className="block w-full text-center bg-white text-primary py-2.5 rounded-md font-medium"
+              className={cn(
+                'block w-full text-center py-2.5 rounded-md font-medium transition-colors',
+                isScrolled
+                  ? 'bg-primary text-white'
+                  : 'bg-white text-primary'
+              )}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Us
