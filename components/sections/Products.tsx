@@ -52,12 +52,12 @@ export function Products() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {categories.map((category) => (
-            <Card key={category.id} variant="outline" className="p-5 hover:border-primary/30 transition-colors">
+            <Card key={category.id} variant="outline" className="p-5 hover:border-primary/30 transition-colors flex flex-col h-full">
               <div className={`w-10 h-10 ${category.color} rounded-lg flex items-center justify-center mb-4`}>
                 <Icon name={category.icon} size={20} className="text-white" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-3">{category.title}</h3>
-              <ul className="space-y-1.5 mb-4">
+              <ul className="space-y-1.5 flex-grow">
                 {category.items.map((item) => (
                   <li key={item} className="text-sm text-gray-600 flex items-center gap-2">
                     <span className="w-1 h-1 rounded-full bg-gray-300" />
@@ -67,7 +67,7 @@ export function Products() {
               </ul>
               <Link
                 href="#contact"
-                className="text-sm text-primary font-medium hover:underline inline-flex items-center gap-1"
+                className="text-sm text-primary font-medium hover:underline inline-flex items-center gap-1 mt-4"
               >
                 Get Quote
                 <Icon name="arrow-right" size={14} />
