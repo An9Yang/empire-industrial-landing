@@ -1,0 +1,156 @@
+/**
+ * Empire Industrial Corp - Design Tokens v2.0
+ *
+ * 精简版设计系统 - 遵循「克制」原则
+ * - 减少变量数量，提高一致性
+ * - 阴影更轻柔，层级更清晰
+ * - 统一的 z-index 管理
+ */
+
+:root {
+  /* ============================================
+     COLORS - 精简配色
+     ============================================ */
+
+  /* Brand - 主品牌色 */
+  --color-primary: #1B4D3E;
+  --color-primary-hover: #153d31;
+  --color-primary-light: #e8f5f0;
+
+  /* Neutral - 中性色阶 */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Semantic */
+  --color-text: var(--color-gray-800);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-muted: var(--color-gray-400);
+  --color-text-inverse: #ffffff;
+
+  --color-bg: #ffffff;
+  --color-bg-secondary: var(--color-gray-50);
+  --color-bg-dark: #0f2e25;
+
+  --color-border: var(--color-gray-200);
+  --color-border-light: var(--color-gray-100);
+
+  /* Category accent colors */
+  --color-accent-yellow: #ca8a04;
+  --color-accent-blue: #2563eb;
+  --color-accent-gray: var(--color-gray-700);
+
+
+  /* ============================================
+     TYPOGRAPHY - 简化字体系统
+     ============================================ */
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Type Scale - 更紧凑 */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 2rem;        /* 32px */
+  --text-4xl: 2.5rem;      /* 40px */
+  --text-5xl: 3rem;        /* 48px */
+
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+
+  /* ============================================
+     SPACING - 8pt Grid
+     ============================================ */
+
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+
+  /* ============================================
+     RADIUS - 统一圆角
+     ============================================ */
+
+  --radius-sm: 0.375rem;   /* 6px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 0.75rem;    /* 12px */
+  --radius-xl: 1rem;       /* 16px */
+  --radius-full: 9999px;
+
+
+  /* ============================================
+     SHADOWS - 更轻柔的阴影
+     ============================================ */
+
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.03);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.03);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.02);
+
+
+  /* ============================================
+     Z-INDEX - 统一层级管理
+     ============================================ */
+
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-overlay: 40;
+  --z-modal: 50;
+  --z-toast: 60;
+
+
+  /* ============================================
+     TRANSITIONS
+     ============================================ */
+
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+
+  /* ============================================
+     LAYOUT
+     ============================================ */
+
+  --container-max: 72rem;      /* 1152px - 更紧凑 */
+  --navbar-height: 4rem;       /* 64px - 更精致 */
+  --section-gap: 5rem;         /* 80px */
+  --section-gap-sm: 3rem;      /* 48px mobile */
+}
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (min-width: 768px) {
+  :root {
+    --navbar-height: 5rem;
+  }
+}

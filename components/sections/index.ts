@@ -1,0 +1,8 @@
+export { Hero } from './Hero'
+export { ValueBar } from './ValueBar'
+export { About } from './About'
+export { Industries } from './Industries'
+export { Products } from './Products'
+export { Services } from './Services'
+export { Sustainability } from './Sustainability'
+export { Contact } from './Contact'
