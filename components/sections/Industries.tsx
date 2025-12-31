@@ -31,7 +31,7 @@ const industries: Industry[] = [
     icon: 'beaker',
     title: 'Water Treatment',
     description: 'Municipal and industrial system chemicals.',
-    image: 'https://images.unsplash.com/photo-1584843333345-ec66bdeb9df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
   },
   {
     icon: 'building',
